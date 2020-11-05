@@ -53,8 +53,8 @@ python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> -fp_rho <fp_rho> 
 ```
 Pass the pcd files of the two point sets, the path of registration figure, and the results of architectural symmetry detection. Then the command will output the graphic result of the registration in the <reg-fig>
 - Graphic example
-![Before registration](./before.png "Before registration")
-![After registration](./after.png "After registration")
+![Before registration](./before.png "Before registration" =200x200)
+![After registration](./after.png "After registration" =200x200)
 
 # License
 
