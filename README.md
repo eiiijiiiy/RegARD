@@ -60,13 +60,6 @@ Pass the pcd files of the two point sets, the path of registration figure, and t
 
 LGPL-3.0
 
-# Authors
-* [Yijie Wu](//www.researchgate.net/profile/Yijie_Wu11) < wuyijie@hku.hk; wuyijie0710@gmail.com >
-* [Fan Xue](//www.arch.hku.hk/staff/rec/xue-fan/) < xuef@hku.hk; fanxue@outlook.com >
-* [Wilson Lu](//www.arch.hku.hk/staff/rec/lu-wilson-w-s/) < wilsonlu@hku.hk >
-
-
-
 # Acknowledgements
 
 This work was supported by the Research Grant Council (RGC) of Hong Kong SAR (Nos. 17200218, 27200520).
