@@ -22,7 +22,7 @@ iterations = 0
 time_start = time.time()
 time_end = None
 
-def transform_pcd(in_pcdf, out_pcdf=None, rho, theta):
+def transform_pcd(in_pcdf, rho, theta, out_pcdf=None):
     import open3d as o3d
     pcd = o3d.io.read_point_cloud(in_pcdf)
     R = o3d.geometry.get_rotation_matrix_from_xyz([0, 0, -theta])
@@ -293,7 +293,7 @@ def register(fp, pc, alg, with_ard, reg_fig, max_iter=100,bs=1.2,
 		assert pc_rho is not None and pc_theta is not None
 		# read data and transform with ard parameters
 		print("> transforming with ard parameters", fp)
-		as_designed = transform_pcd(fp_rho, fp_theta, fp)
+		as_designed = transform_pcd(fp, fp_rho, fp_theta)
 		# as_designed = o3d.geometry.PointCloud()
 		# as_designed.points = o3d.utility.Vector3dVector(fp_transformed)
 		kd_tree_designed = o3d.geometry.KDTreeFlann(as_designed)			# Kd-tree structure for searching
@@ -301,7 +301,7 @@ def register(fp, pc, alg, with_ard, reg_fig, max_iter=100,bs=1.2,
 		center_designed = (as_designed.get_max_bound() + as_designed.get_min_bound())/2
 
 		print("> transforming with ard parameters", pc)
-		as_built = transform_pts(pc_rho, pc_theta, pc)
+		as_built = transform_pcd(pc, pc_rho, pc_theta)
 		# as_built = o3d.geometry.PointCloud()
 		# as_built.points = o3d.utility.Vector3dVector(pc_transformed)
 		bound_built = as_built.get_max_bound() - as_built.get_min_bound()
@@ -342,7 +342,6 @@ def register(fp, pc, alg, with_ard, reg_fig, max_iter=100,bs=1.2,
 				RMSE = get_eval(dof, x)
 				alg_RMSES.append(RMSE)
 				alg_TIMES.append(time_end - time_start)
-				# print('>> Algorithm', a, 'found a solution', x,' with RMSE =', RMSE, ', in ', time_end - time_start, 's')
 				if RMSE < best_RMSE:
 					best_RMSE = RMSE
 					best_x = x
@@ -435,7 +434,7 @@ def main():
 	parser.add_argument('--fp', type=str, help='input sampled points of floor plan', required=True)
 	parser.add_argument('--pc', type=str, help='input sampled points of point cloud', required=True)
 	parser.add_argument('--alg', type=str, help='DFO algorithm, options: ALL, CMAES, DIRECT, MLSL, MMA, COBYLA, NEWUOA, NELDERMEAD, SBPLX, AUGLAG, BOBYQA', required=False, default='NELDERMEAD')
-	parser.add_argument('--without_ard', action='store_false', help='enable ARD', required=False)
+	parser.add_argument('--without_ard', action='store_true', help='enable ARD', required=False)
 	parser.add_argument('--reg_fig', type=str, help='the ouput registration figure', required=True)
 	parser.add_argument('--max_iter', type=float, help='max iterations', required=False, default=100)
 	parser.add_argument('--bs', type=float, help='the bound of scaling', required=False, default=1.2)
@@ -446,9 +445,9 @@ def main():
 	args = parser.parse_args()
 
 	if args.without_ard:
-		register(args.fp, args.pc, args.alg, args.without_ard, args.reg_fig, max_iter=args.max_iter, bs=args.bs)
+		register(args.fp, args.pc, args.alg, False, args.reg_fig, max_iter=args.max_iter, bs=args.bs)
 	else:
-		register(args.fp, args.pc, args.alg, args.without_ard, args.reg_fig, max_iter=args.max_iter, bs=args.bs,
+		register(args.fp, args.pc, args.alg, True, args.reg_fig, max_iter=args.max_iter, bs=args.bs,
 				fp_rho=args.fp_rho,fp_theta=args.fp_theta, pc_rho=args.pc_rho, pc_theta=args.pc_theta)
     	
 
