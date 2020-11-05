@@ -25,7 +25,9 @@ conda install -c conda-forge nlopt
 ```
 - [libcmaes](//github.com/beniz/libcmaes)
 ```sh
-conda install -c conda-forge ??
+conda install -c conda-forge nlopt
+conda install -c conda-forge libcmaes
+conda install -c conda-forge deap
 ```
 - [open3d](//pypi.org/project/open3d/)
 ```sh
