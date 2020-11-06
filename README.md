@@ -29,12 +29,9 @@ conda install -c conda-forge libcmaes
 ```
 - [open3d](//pypi.org/project/open3d/)
 ```sh
-pip install open3d
+conda install -c open3d-admin open3d
 ```
 - [numpy](//pypi.org/project/numpy/)
-```sh
-pip install numpy
-```
 - Python version: 3.8
 
 # Registration
