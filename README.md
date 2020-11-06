@@ -20,17 +20,9 @@ Codes have only been tested on Ubuntu 18.04 and 20.04. The following guidelines 
 Welcome any other contributions or experiments on the other platform :)
 
 - [nlopt](//nlopt.readthedocs.io/) 
-```sh
-conda install -c conda-forge nlopt
-```
-- [libcmaes](//github.com/beniz/libcmaes)
-```sh
-conda install -c conda-forge libcmaes
-```
+Installation for both C++ and Python is required. 
+- [libcmaes](//github.com/beniz/libcmaes)   
 - [open3d](//pypi.org/project/open3d/)
-```sh
-conda install -c open3d-admin open3d
-```
 - [numpy](//pypi.org/project/numpy/)
 - Python version: 3.8
 
