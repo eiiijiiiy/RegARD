@@ -24,7 +24,7 @@ Installation for both C++ and Python is required.
 - [libcmaes](//github.com/beniz/libcmaes)   
 - [open3d](//pypi.org/project/open3d/)
 - [numpy](//pypi.org/project/numpy/)
-- [odas] (//github.com/ffxue/odas)
+- [odas](//github.com/ffxue/odas)
 We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.so can be built from the source of odas-RegARD and then be imported by the ard.py. Or if the local locations and versions of the dependencies of odas are same as those of odas-RegARD, you can use the complied libodas.so directly.
 - Python version: 3.8
 
