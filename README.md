@@ -4,7 +4,7 @@ The **Reg**istration based on **A**rchitectural **R**eflection **D**etection (Re
 
 # How to cite
 
-[Wu, Y.](wuyijie@hku.hk), [Shang J.](jgshang@cug.edu.cn), [Lu W.](wilsonlu@hku.hk), and [Xue F.*](xuef@hku.hk). Toward digital twin buildings: Architectural symmetry-based coarse registration of smartphone’s 3D point clouds with 2D floor plans. (under review)
+[Wu, Y.](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD), [Shang J.](mailto:jgshang@cug.edu.cn?subject=[GitHub]RegARD), [Lu W.](mailto:wilsonlu@hku.hk?subject=[GitHub]RegARD), and [Xue F.*](mailto:xuef@hku.hk?subject=[GitHub]RegARD). Toward digital twin buildings: Architectural symmetry-based coarse registration of smartphone’s 3D point clouds with 2D floor plans. (under review)
 
 # How does it work
 
