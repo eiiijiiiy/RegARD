@@ -47,6 +47,10 @@ Pass the pcd files of the two point sets, the path of registration figure, and t
 <img src="./before.png" alt="Before registration" width="400"/>
 <img src="./after.png" alt="After registration" width="400"/>
 
+# Authors' Contacts
+
+- Wu, Y.: [wuyijie@hku.hk](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD)
+- Xue, F.: [xuef@hku.hk](mailto:xuef@hku.hk?subject=[GitHub]RegARD), [homepage](//frankxue.com/)
 
 # License
 
