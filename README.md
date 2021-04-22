@@ -4,7 +4,7 @@ The **Reg**istration based on **A**rchitectural **R**eflection **D**etection (Re
 
 # How to cite
 
-[Wu, Y.](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD), [Shang J.](mailto:jgshang@cug.edu.cn?subject=[GitHub]RegARD), [Lu W.](mailto:wilsonlu@hku.hk?subject=[GitHub]RegARD), and [Xue F.*](mailto:xuef@hku.hk?subject=[GitHub]RegARD). Toward digital twin buildings: Architectural symmetry-based coarse registration of smartphone’s 3D point clouds with 2D floor plans. (under review)
+[Wu, Y.](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD), [Shang J.](mailto:jgshang@cug.edu.cn?subject=[GitHub]RegARD), and [Xue F.*](mailto:xuef@hku.hk?subject=[GitHub]RegARD). RegARD: Symmetry-based Coarse Registration of Smartphone’s Colorful Point Clouds with CAD Drawings for Low-cost Digital Twin Buildings. (under review)
 
 # How does it work
 
@@ -40,7 +40,7 @@ Pass the pcd files of the two point sets. Then the command will return the rho a
 
 - Registration
 ```sh
-python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> -fp_rho <fp_rho> --fp_theta <fp_theta> --pc_rho <pc_rho> --pc_theta <pc_theta>
+python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_rho <fp_rho> --fp_theta <fp_theta> --pc_rho <pc_rho> --pc_theta <pc_theta>
 ```
 Pass the pcd files of the two point sets, the path of registration figure, and the results of architectural symmetry detection. Then the command will output the graphic result of the registration in the <reg-fig>
 - Graphic example
