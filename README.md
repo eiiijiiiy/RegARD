@@ -32,26 +32,26 @@ We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.
 
 Note that the two point sets for registration are sampled from the CAD drawing and the 2D projected point cloud respectively. So, the code and args named the data as 'fp' and 'pc' or 'as-designed' and 'as-built'.
 
-- Detect the architectural reflection axis
+- Detect the architectural reflection axis (the **ard** part)
+Run the ard with:
 ```sh
-python3 ard.py --fp <fp-pcd> --pc <pc-pcd> --rmse_t <threshold of RMSE>
+python3 ard.py --fp <fp-pcd> --pc <pc-pcd> --fitness <threshold of fitness>
 ```
-Pass the pcd files of the two point sets. Then the command will return the r and theta of the symmetry axes. 
 
-If both RMSEs of 'fp' and 'pc' are less then the threshold, then we suggest using the 4-DoF transformation optimization. You can copy the outputted parameters of the symmetric axes '--fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>' and pass to the reg.py.
+If both fitnesses of 'fp' and 'pc' are less than the threshold, then we suggest using the 4-DoF transformation optimization. You can copy the outputted parameters of the symmetric axes '--fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>' and pass to the reg.py.
 
 Otherwise, we suggest using the 5-DoF transformation optimization. 
 
-- Registration
-  - 4-DoF registration 
+- Registration (the **reg** part)
+Run the 4-DoF registration  with:
 ```sh
 python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>
 ```
-Pass the pcd files of the two point sets, the path of registration figure, and the results of architectural symmetry detection. Then the command will output the graphic result of the registration in the <reg-fig>
-  - 5-DoF registration
+Or run the 5-DoF registration  with:
 ```sh
 python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig>
 ```
+Graphic results will be saved in <reg-fig> and <ard-fig> (if applicable).
 - Graphic example
 <img src="./before.png" alt="Before registration" width="400"/>
 <img src="./after.png" alt="After registration" width="400"/>
