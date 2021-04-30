@@ -25,7 +25,7 @@ Installation for both C++ and Python is required.
 - [open3d](//pypi.org/project/open3d/)
 - [numpy](//pypi.org/project/numpy/)
 - [odas](//github.com/ffxue/odas)
-We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.so can be built from the source of odas-RegARD and then be imported by the ard.py. Or if the local locations and versions of the dependencies of odas are same as those of odas-RegARD, you can use the complied libodas.so directly.
+We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.so can be built from the source of odas-RegARD and then be imported by the ard.py. Or if the local locations and versions of the dependencies of odas are the same as those of odas-RegARD, you can use the complied libodas.so directly.
 - Python version: 3.8
 
 # Registration
@@ -38,9 +38,9 @@ python3 ard.py --fp <fp-pcd> --pc <pc-pcd> --rmse_t <threshold of RMSE>
 ```
 Pass the pcd files of the two point sets. Then the command will return the r and theta of the symmetry axes. 
 
-If both RMSEs of 'fp' and 'pc' are less then the threshold, then we suggest use the 4 DoF transformation optimization. You can copy the outputted parameters of the symmetric axes '--fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>' and pass to the reg.py.
+If both RMSEs of 'fp' and 'pc' are less then the threshold, then we suggest using the 4-DoF transformation optimization. You can copy the outputted parameters of the symmetric axes '--fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>' and pass to the reg.py.
 
-Otherwise, we suggest using the 5 DoF transformation optimization. 
+Otherwise, we suggest using the 5-DoF transformation optimization. 
 
 - Registration
   - 4-DoF registration 
