@@ -273,7 +273,7 @@ def register(fp, pc, alg, with_asd, reg_fig, max_iter=1000, fp_asd_rho=None,
 			iterations, time_start, time_end, final_RMSE, final_transformation, fixed_rotation_first
 	
 	# global dof
-
+	
 	scale_bound = bs
 	# read as 3D points
 	print("> reading", fp)
@@ -449,14 +449,14 @@ if __name__ == "__main__":
 	parser.add_argument('--ard_fig', type=str, help='the ouput registration figure', required=False)
 	parser.add_argument('--max_iter', type=int, help='max iterations', required=False, default=100)
 	parser.add_argument('--bs', type=float, help='the bound of scaling', required=False, default=1.2)
-	parser.add_argument('--fp_rho', type=float, help='the rho of the fp symmetry axis', required=False)
+	parser.add_argument('--fp_r', type=float, help='the r of the fp symmetry axis', required=False)
 	parser.add_argument('--fp_theta', type=float, help='the theta of the fp symmetry axis', required=False)
-	parser.add_argument('--pc_rho', type=float, help='the rho of the pc symmetry axis', required=False)
+	parser.add_argument('--pc_r', type=float, help='the r of the pc symmetry axis', required=False)
 	parser.add_argument('--pc_theta', type=float, help='the theta of the pc symmetry axis', required=False)
 	args = parser.parse_args()
 	if args.ard:
 		register(args.fp, args.pc, args.alg, args.ard, args.reg_fig, args.max_iter, 
-				args.fp_rho, args.fp_theta, args.pc_rho, args.pc_theta, args.ard_fig, args.bs)
+				args.fp_r, args.fp_theta, args.pc_r, args.pc_theta, args.ard_fig, args.bs)
 	else:
 		register(args.fp, args.pc, args.alg, args.ard, args.reg_fig, args.max_iter, args.bs)
 	
