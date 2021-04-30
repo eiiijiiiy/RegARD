@@ -48,7 +48,7 @@ Otherwise, we suggest using the 5 DoF transformation optimization.
 python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>
 ```
 Pass the pcd files of the two point sets, the path of registration figure, and the results of architectural symmetry detection. Then the command will output the graphic result of the registration in the <reg-fig>
-  - 5 DoF registration
+  - 5-DoF registration
 ```sh
 python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig>
 ```
