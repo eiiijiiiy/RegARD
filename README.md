@@ -33,6 +33,7 @@ We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.
 Note that the two point sets for registration are sampled from the CAD drawing and the 2D projected point cloud respectively. So, the code and args named the data as 'fp' and 'pc' or 'as-designed' and 'as-built'.
 
 - Detect the architectural reflection axis (the **ard** part)
+
 Run the ard with:
 ```sh
 python3 ard.py --fp <fp-pcd> --pc <pc-pcd> --fitness <threshold of fitness>
@@ -43,6 +44,7 @@ If both fitnesses of 'fp' and 'pc' are less than the threshold, then we suggest 
 Otherwise, we suggest using the 5-DoF transformation optimization. 
 
 - Registration (the **reg** part)
+
 Run the 4-DoF registration  with:
 ```sh
 python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>
