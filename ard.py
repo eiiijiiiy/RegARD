@@ -31,7 +31,7 @@ lib.odas_DIRECT(pc_path, ctypes.byref(pc_rho), ctypes.byref(pc_theta), ctypes.by
 
 print('fp ard rmse: {} {} threshold'.format(fp_rmse.value, '>' if float(fp_rmse.value) > args.rmse_t else '<='))
 print('pc ard rmse: {} {} threshold'.format(pc_rmse.value, '>' if float(pc_rmse.value) > args.rmse_t else '<='))
-print('--fp_rho {} --fp_theta {} --pc_rho {} --pc_theta {}'.format(fp_rho.value, fp_theta.value, pc_rho.value, pc_theta.value))
+print('--fp_r {} --fp_theta {} --pc_r {} --pc_theta {}'.format(fp_rho.value, fp_theta.value, pc_rho.value, pc_theta.value))
 
 if fp_rmse.value > args.rmse_t or pc_rmse.value > args.rmse_t:
     print('Use the 5-DoF transformation optimization')
