@@ -32,7 +32,7 @@ We provided a simplified odas for RegARD in the "odas-RegARD" fold. The libodas.
 
 Note that the two point sets for registration are sampled from the CAD drawing and the 2D projected point cloud respectively. So, the code and args named the data as 'fp' and 'pc' or 'as-designed' and 'as-built'.
 
-- Detect the architectural reflection axis (the **ard** part)
+- Detect the architectural reflection axes (the **ard** part)
 
 Run the ard with:
 ```sh
