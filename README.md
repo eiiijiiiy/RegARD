@@ -34,15 +34,24 @@ Note that the two point sets for registration are sampled from the CAD drawing a
 
 - Detect the architectural reflection axis
 ```sh
-python3 ard.py --fp <fp-pcd> --pc <pc-pcd>
+python3 ard.py --fp <fp-pcd> --pc <pc-pcd> --rmse_t <threshold of RMSE>
 ```
-Pass the pcd files of the two point sets. Then the command will return the rho and theta of the symmetry axes. Copy them and pass to the reg.py as follows.
+Pass the pcd files of the two point sets. Then the command will return the r and theta of the symmetry axes. 
+
+If both RMSEs of 'fp' and 'pc' are less then the threshold, then we suggest use the 4 DoF transformation optimization. You can copy the outputted parameters of the symmetric axes '--fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>' and pass to the reg.py.
+
+Otherwise, we suggest using the 5 DoF transformation optimization. 
 
 - Registration
+  - 4-DoF registration 
 ```sh
-python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_rho <fp_rho> --fp_theta <fp_theta> --pc_rho <pc_rho> --pc_theta <pc_theta>
+python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig> --ard_fig <ard-fig> --fp_r <fp_r> --fp_theta <fp_theta> --pc_r <pc_r> --pc_theta <pc_theta>
 ```
 Pass the pcd files of the two point sets, the path of registration figure, and the results of architectural symmetry detection. Then the command will output the graphic result of the registration in the <reg-fig>
+  - 5 DoF registration
+```sh
+python3 reg.py --fp <fp-pcd> --pc <pc-pcd> --reg_fig <reg-fig>
+```
 - Graphic example
 <img src="./before.png" alt="Before registration" width="400"/>
 <img src="./after.png" alt="After registration" width="400"/>
