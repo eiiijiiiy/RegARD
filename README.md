@@ -4,7 +4,7 @@ The **Reg**istration based on **A**rchitectural **R**eflection **D**etection (Re
 
 # How to cite
 
-[Wu, Y.](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD), [Shang J.](mailto:jgshang@cug.edu.cn?subject=[GitHub]RegARD), and [Xue F.*](mailto:xuef@hku.hk?subject=[GitHub]RegARD). RegARD: Symmetry-based Coarse Registration of Smartphone’s Colorful Point Clouds with CAD Drawings for Low-cost Digital Twin Buildings. (under review)
+[Wu, Y.](mailto:wuyijie@hku.hk?subject=[GitHub]RegARD), [Shang J.](mailto:jgshang@cug.edu.cn?subject=[GitHub]RegARD), and [Xue F.*](mailto:xuef@hku.hk?subject=[GitHub]RegARD). RegARD: Symmetry-based Coarse Registration of Smartphone’s Colorful Point Clouds with CAD Drawings for Low-cost Digital Twin Buildings. [https://doi.org/10.3390/rs13101882](https://doi.org/10.3390/rs13101882)
 
 # How does it work
 
